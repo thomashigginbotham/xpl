@@ -25,7 +25,7 @@ input:not([type=radio]):not([type=checkbox]):not([type=submit]) {
 	@include box-sizing(border-box);
 	padding: 0 $form-field-height / 4;
 	height: $form-field-height;
-	border: 1px solid $color-primary;
+	border: 1px solid $color-text;
 
 	&:focus {
 		outline: 1px solid $color-primary;
@@ -35,7 +35,7 @@ input:not([type=radio]):not([type=checkbox]):not([type=submit]) {
 textarea {
 	@include box-sizing(border-box);
 	padding: $form-field-height / 4;
-	border: 1px solid $color-primary;
+	border: 1px solid $color-text;
 
 	&:focus {
 		outline: 1px solid $color-primary;
@@ -51,7 +51,7 @@ select {
 	@include box-sizing(border-box);
 	padding: 0 $form-field-height / 4;
 	height: $form-field-height;
-	border: 1px solid $color-primary;
+	border: 1px solid $color-text;
 
 	&:focus {
 		outline: 1px solid $color-primary;
@@ -233,7 +233,7 @@ button,
 	}
 
 	&:hover:before {
-		@include translate3d(0, 0, 0);
+		@include scale3d(1, 1, 1);
 		@include opacity(1);
 	}
 
