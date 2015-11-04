@@ -24,6 +24,7 @@ label {
 input:not([type=radio]):not([type=checkbox]):not([type=submit]) {
 	@include box-sizing(border-box);
 	padding: 0 $form-field-height / 4;
+	max-width: 100%;
 	height: $form-field-height;
 	border: 1px solid $color-text;
 
@@ -35,6 +36,7 @@ input:not([type=radio]):not([type=checkbox]):not([type=submit]) {
 textarea {
 	@include box-sizing(border-box);
 	padding: $form-field-height / 4;
+	max-width: 100%;
 	border: 1px solid $color-text;
 
 	&:focus {
