@@ -77,6 +77,8 @@ body {
 // No styleguide referenece.
 .xpl-component-wrapper {
 	@include rem(margin-bottom, $col-gutter);
+	@include rem(padding-top, $col-gutter);
+	border-top: 3px solid $ui-color-accent;
 }
 
 // IE 8 corrections
