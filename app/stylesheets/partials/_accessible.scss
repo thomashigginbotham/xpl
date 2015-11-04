@@ -8,8 +8,9 @@
 //
 // No styleguide reference.
 .skip-to-content {
-	@include rem(top, $col-gutter * -2.5);
-	@include rem(padding, $col-gutter / 2 $col-gutter);
+	@include rem(top, -3rem);
+	@include rem(padding, 1rem);
+	@include rem(line-height, 1rem);
 	@include transition(top 1s ease-out, background-color .5s linear);
 	position: absolute;
 	z-index: 900;
