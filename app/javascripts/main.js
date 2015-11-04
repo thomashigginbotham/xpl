@@ -11,17 +11,27 @@ requirejs.config({
 		'sample-plugin': 'lib/jquery-plugins/jquery.sampleplugin',
 		'jquery-noconflict': 'lib/jquery-noconflict',
 		footer: 'lib/components/footer',
+		almond: '../bower_components/almond/almond',
 		jquery: '../bower_components/jquery/dist/jquery',
-		almond: '../bower_components/almond/almond'
+		respond: '../bower_components/respond/dest/respond.src',
+		selectivizr: '../bower_components/selectivizr/selectivizr'
+	},
+	shim: {
+		selectivizr: [
+			'jquery'
+		]
 	},
 	map: {
 		'*': {
-			'jquery': 'jquery-noconflict'
+			jquery: 'jquery-noconflict'
 		},
 		'jquery-noconflict': {
-			'jquery': 'jquery'
+			jquery: 'jquery'
 		}
-	}
+	},
+	packages: [
+
+	]
 });
 
 /* -- Initialize App (app.js) -- */

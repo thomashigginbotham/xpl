@@ -2,14 +2,15 @@
   "name": "experis-pattern-library",
   "version": "0.0.1",
   "dependencies": {
-    "jquery": "~1.11.1",
-    "requirejs": "~2.1.11",
-    "html5shiv": "~3.7.2",
-    "selectivizr": "https://github.com/keithclark/selectivizr.git#ed2f5e3e56f059ad256cc921e24ecc0e1855f18a",
-    "normalize-css": "~3.0.1",
     "almond": "~0.2.9",
     "angular": "~1.2.21",
     "angular-route": "~1.2.21",
-    "google-code-prettify": "~1.0.2"
+    "google-code-prettify": "~1.0.2",
+    "html5shiv": "~3.7.2",
+    "jquery": "~1.11.1",
+    "normalize-css": "~3.0.1",
+    "requirejs": "~2.1.11",
+    "respond": "~1.4.2",
+    "selectivizr": "https://github.com/keithclark/selectivizr.git#ed2f5e3e56f059ad256cc921e24ecc0e1855f18a"
   }
 }

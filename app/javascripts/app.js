@@ -29,12 +29,16 @@ define(['jquery'], function($) {
 			init();
 
 			// Use Selectivizr and Respond.js for IE 8 and below
-			// IMPORTANT: Selectivizr requires a global jQuery object to work.
 			if ($('.lt-ie9').length > 0) {
-				var selectivizrPath = '/javascripts/vendor/selectivizr.js';
+				// Selectivizr expects a global jQuery object
+				window.jQuery = $;
 
-				$.getScript(selectivizrPath, function() {
-					$.getScript('//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js');
+				require(['selectivizr'], function() {
+					// Remove the global jQuery object
+					window.jQuery = undefined;
+
+					// Respond.js must be loaded after Selectivizr
+					require(['respond']);
 				});
 			}
 		}, 0);
