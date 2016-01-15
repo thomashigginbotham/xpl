@@ -1,247 +1,369 @@
-// Form Styles
+// Form styles.
 //
 // No styleguide reference.
 
-// Variables
-//
-// No styleguide reference.
-$form-field-height: 2.78em;
+// General form restyling
+$form-field-height: 2.5rem;
 
-// Global Styles
-//
-// Compatibility untested.
-//
-// No styleguide reference.
+fieldset {
+	margin-bottom: $col-gutter;
+	padding: $col-gutter;
+	border: 1px solid darken($color-bg, 25%);
+}
+
 label {
+	display: block;
+	position: relative;
 	cursor: pointer;
 }
 
-// Text boxes.
-//
-// Compatibility untested.
-//
-// No styleguide reference.
-input:not([type=radio]):not([type=checkbox]):not([type=submit]) {
-	@include box-sizing(border-box);
-	padding: 0 $form-field-height / 4;
-	max-width: 100%;
-	height: $form-field-height;
-	border: 1px solid $color-text;
-
-	&:focus {
-		outline: 1px solid $color-primary;
-	}
+[type=checkbox] + label,
+[type=radio] + label {
+	@include inline-block;
+	vertical-align: initial;
+	margin-right: .6em;
 }
 
-textarea {
-	@include box-sizing(border-box);
-	padding: $form-field-height / 4;
-	max-width: 100%;
-	border: 1px solid $color-text;
-
-	&:focus {
-		outline: 1px solid $color-primary;
-	}
-}
-
-// Drop-downs.
-//
-// Compatibility untested.
-//
-// No styleguide reference.
+[type=text],
+[type=password],
+[type=date],
+[type=datetime],
+[type=datetime-local],
+[type=month],
+[type=week],
+[type=email],
+[type=number],
+[type=search],
+[type=tel],
+[type=time],
+[type=url],
+[type=color],
+textarea,
 select {
 	@include box-sizing(border-box);
-	padding: 0 $form-field-height / 4;
+	@include border-radius(0);
+	@include transition(background-color .4s, box-shadow .4s ease-in-out);
+	display: block;
+	padding: .5rem;
+	width: 100%;
 	height: $form-field-height;
-	border: 1px solid $color-text;
+	border: 1px solid darken($color-bg, 25%);
+	font-family: inherit;
+	font-size: $base-font-size;
+	background-color: darken($color-bg, 1%);
 
 	&:focus {
-		outline: 1px solid $color-primary;
+		border-color: darken($color-bg, 35%);
+		outline: 1px solid darken($color-bg, 35%);
 	}
 }
 
-// Validations.
-//
-// Compatibility untested.
-//
-// No styleguide reference.
-.error-state {
+input[type=search] {
+	@include box-sizing(border-box); // Override Normalize CSS
+}
+
+[type=text]:hover,
+[type=password]:hover,
+[type=date]:hover,
+[type=datetime]:hover,
+[type=datetime-local]:hover,
+[type=month]:hover,
+[type=week]:hover,
+[type=email]:hover,
+[type=number]:hover,
+[type=search]:hover,
+[type=tel]:hover,
+[type=time]:hover,
+[type=url]:hover,
+[type=color]:hover,
+textarea:hover,
+select:hover {
+	border-color: darken($color-bg, 35%);
+}
+
+[type=text]:focus,
+[type=password]:focus,
+[type=date]:focus,
+[type=datetime]:focus,
+[type=datetime-local]:focus,
+[type=month]:focus,
+[type=week]:focus,
+[type=email]:focus,
+[type=number]:focus,
+[type=search]:focus,
+[type=tel]:focus,
+[type=time]:focus,
+[type=url]:focus,
+[type=color]:focus,
+textarea:focus,
+select:focus {
+	@include box-shadow(0 0 .5rem rgba($color-text, .25));
+	border-color: darken($color-bg, 35%);
+	background-color: $color-bg;
+	outline: 1px solid darken($color-bg, 35%);
+}
+
+[disabled] {
+	@include text-shadow(1px 1px 0 $color-bg);
+	color: darken($color-bg, 65%);
+	background-color: darken($color-bg, 15%);
+	cursor: not-allowed;
+}
+
+[type=checkbox],
+[type=radio] {
+	outline-color: darken($color-bg, 50%);
+}
+
+[rows] {
+	height: auto;
+}
+
+select {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	padding-right: 1.5rem;
+	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="16" height="12" viewBox="0 0 16 12"><polygon points="0,0 16,0 8,12" style="fill: rgb(75, 75, 75)"></polygon></svg>');
+	background-size: 10.5px 7px;
+	background-position: right .5rem center;
+	background-repeat: no-repeat;
+
+	&[disabled] {
+		background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="16" height="12" viewBox="0 0 16 12"><polygon points="0,0 16,0 8,12" style="fill: rgb(150, 150, 150)"></polygon></svg>');
+	}
+
+	&[size] {
+		height: auto;
+	}
+}
+
+option {
+	color: $color-text;
+}
+
+// Form layouts
+.basic-form,
+.inline-form {
+	margin-bottom: $col-gutter;
+}
+
+fieldset .basic-form:last-child,
+fieldset .inline-form:last-child {
+	margin-bottom: 0;
+}
+
+.form-field {
+	margin-bottom: 1rem;
+}
+
+.form-field:last-child {
+	margin-bottom: 0;
+}
+
+@media (min-width: $canvas-small) {
+	.inline-form {
+		display: table;
+
+		.form-field {
+			display: table-row;
+
+			> * {
+				display: table-cell;
+				margin-bottom: 1rem;
+				padding-right: 1rem;
+				vertical-align: top;
+			}
+
+			> div:last-child,
+			> span:last-child {
+				padding-right: 0;
+			}
+
+			&:last-child > * {
+				margin-bottom: 0;
+			}
+
+			> select,
+			> select:last-child {
+				padding-right: 1.5rem;
+			}
+
+			> .attached-field {
+				display: table;
+			}
+
+			> .attached-field {
+				@include display-flex;
+				display: -ms-flexbox;
+			}
+
+			&.multiple-fields > :last-child {
+				padding-right: 1rem;
+			}
+
+			&.multiple-fields > select:last-child {
+				padding-right: 1.5rem;
+			}
+		}
+
+		label {
+			padding-top: .6rem;
+		}
+
+		[type=text],
+		[type=password],
+		[type=date],
+		[type=datetime],
+		[type=datetime-local],
+		[type=month],
+		[type=week],
+		[type=email],
+		[type=number],
+		[type=search],
+		[type=tel],
+		[type=time],
+		[type=url],
+		[type=color],
+		textarea {
+			width: auto;
+
+			&:last-child {
+				padding-right: .5rem;
+			}
+		}
+	}
+}
+
+.multiple-fields {
+	> * {
+		margin-bottom: 1rem;
+	}
+
+	> :last-child {
+		margin-bottom: 0;
+	}
+}
+
+@media (min-width: $canvas-small) {
+	.inline-label {
+		white-space: nowrap;
+
+		> * {
+			@include inline-block;
+			vertical-align: initial;
+			width: auto;
+		}
+
+		> label {
+			margin-right: .5rem;
+		}
+	}
+}
+
+.attached-field {
+	display: table;
+
+	> * {
+		display: table-cell;
+		width: auto;
+		vertical-align: middle;
+	}
+
+	> :not(:last-child) {
+		border-right-width: 0;
+	}
+
+	[type=text]:focus,
+	[type=password]:focus,
+	[type=date]:focus,
+	[type=datetime]:focus,
+	[type=datetime-local]:focus,
+	[type=month]:focus,
+	[type=week]:focus,
+	[type=email]:focus,
+	[type=number]:focus,
+	[type=search]:focus,
+	[type=tel]:focus,
+	[type=time]:focus,
+	[type=url]:focus,
+	[type=color]:focus,
+	textarea:focus,
+	select:focus {
+		@include box-shadow(inset 0 0 .5rem rgba($color-text, .25));
+		outline: none;
+	}
+}
+
+.attached-field {
+	@include display-flex;
+	display: -ms-flexbox;
+}
+
+.field-description {
+	margin-bottom: .5em;
+}
+
+@media (min-width: $canvas-small) {
+	.inline-form .field-description {
+		margin-bottom: 0;
+	}
+}
+
+.help-text {
+	margin-top: .5em;
+	font-size: .8em;
+	font-style: italic;
+}
+
+// Validation
+.info-message,
+.error-message {
+	margin-bottom: 1em;
+	padding: 1em;
+	color: $color-bg;
+}
+
+.info-message > :last-child,
+.error-message > :last-child {
+	margin-bottom: 0;
+}
+
+.info-message {
+	background-color: darken($color-bg, 50%);
+}
+
+.error-message {
+	background-color: $color-error;
+}
+
+.required-indicator {
+	position: absolute;
+	left: -.6em;
+	color: $color-error;
+}
+
+.invalid-field {
 	color: $color-error;
 
-	input:not([type=radio]):not([type=checkbox]):not([type=submit]),
+	[type=text],
+	[type=password],
+	[type=date],
+	[type=datetime],
+	[type=datetime-local],
+	[type=month],
+	[type=week],
+	[type=email],
+	[type=number],
+	[type=search],
+	[type=tel],
+	[type=time],
+	[type=url],
+	[type=color],
 	textarea,
 	select {
 		border-color: $color-error;
-		color: $color-text;
-
-		&:focus {
-			outline: 1px solid $color-error;
-		}
-	}
-}
-
-.success-msg,
-.warning-msg,
-.error-msg {
-	display: block;
-	clear: left;
-
-	&:before {
-		margin-right: .25em;
-		font-family: 'FontAwesome';
-	}
-}
-
-.success-msg {
-	color: $color-success;
-
-	&:before {
-		content: '\f058';
-	}
-}
-
-.warning-msg {
-	color: $color-warning;
-
-	&:before {
-		content: '\f05a';
-	}
-}
-
-.error-msg {
-	color: $color-error;
-
-	&:before {
-		content: '\f071';
-	}
-}
-
-// Field groupings.
-//
-// Compatibility untested.
-//
-// No styleguide reference.
-.form-field {
-	@include rem(margin-bottom, $col-gutter / 2);
-
-	label {
-		display: block;
-	}
-
-	textarea {
-		display: block;
-	}
-
-	.error-msg {
-		@include rem(margin-top, $col-gutter / 3);
-	}
-}
-
-.inline-field {
-	$label-width: 12em;
-	$field-width: 20em;
-
-	@include row();
-	@include rem(margin-bottom, $col-gutter / 2);
-
-	label {
-		display: block;
-
-		@media (min-width: $canvas-medium) {
-			float: left;
-			margin-right: 1em;
-			width: $label-width;
-			overflow: hidden;
-			text-overflow: ellipsis;
-			white-space: nowrap;
-			line-height: $form-field-height;
-		}
-	}
-
-	input,
-	select {
-		width: $field-width;
-	}
-
-	.error-msg {
-		@include rem(margin-top, $col-gutter / 3);
-
-		@media (min-width: $canvas-medium) {
-			margin-left: $label-width + 1em;
-		}
-	}
-}
-
-.option-field {
-	label {
-		display: inline;
-		float: none;
-		margin: 0;
-		width: auto;
-	}
-}
-
-// Buttons
-//
-// Compatibility untested.
-//
-// No styleguide reference.
-button,
-.button {
-	@include box-sizing(border-box);
-	@include inline-block;
-	vertical-align: top;
-	position: relative;
-	z-index: 1;
-	padding: 0 1em;
-	height: 2.75em;
-	line-height: 2.75em;
-	border: 1px solid $color-primary;
-	text-decoration: none;
-	color: $color-primary;
-	background: none;
-
-	&.disabled,
-	&[disabled] {
-		border-color: darken($color-bg, 20%);
-		cursor: not-allowed;
-		color: darken($color-bg, 30%);
-		background: darken($color-bg, 5%);
-
-		&:hover {
-			color: darken($color-bg, 30%);
-		}
-
-		&:before {
-			display: none;
-		}
-	}
-
-	&:hover {
-		color: $color-bg;
-	}
-
-	&:before {
-		@include scale3d(0, 1, 0);
-		@include opacity(0);
-		@include transition(transform .3s, opacity .3s);
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: -1;
-		background: darken($color-primary, 10%);
-	}
-
-	&:hover:before {
-		@include scale3d(1, 1, 1);
-		@include opacity(1);
-	}
-
-	&:focus {
-		outline: 1px solid $color-primary;
+		background-color: lighten($color-error, 75%);
+		outline-color: $color-error;
 	}
 }
 
@@ -250,28 +372,34 @@ button,
 // Compatibility untested.
 //
 // No styleguide reference.
-.msg-box {
-	&.success-msg,
-	&.warning-msg,
-	&.error-msg {
+.message-box {
+	&.success-message,
+	&.warning-message,
+	&.error-message,
+	&.info-message {
 		padding: .75em 1em;
 		border-width: 1px;
 		border-style: solid;
 		color: $color-text;
 	}
 
-	&.success-msg {
+	&.success-message {
 		border-color: $color-success;
 		background-color: scale-lightness($color-success, 95%);
 	}
 
-	&.warning-msg {
+	&.warning-message {
 		border-color: $color-warning;
 		background-color: scale-lightness($color-warning, 95%);
 	}
 
-	&.error-msg {
+	&.error-message {
 		border-color: $color-error;
 		background-color: scale-lightness($color-error, 95%);
+	}
+
+	&.info-message {
+		border-color: darken($color-bg, 50%);
+		background-color: darken($color-bg, 5%);
 	}
 }

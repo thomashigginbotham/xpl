@@ -10,18 +10,33 @@
 			<span class="xpl-subheading"><a href data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></span>
 		</header>
 
-		<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;form action=&quot;#&quot; method=&quot;post&quot;&gt;&NewLine;&Tab;&lt;div class=&quot;inline-field&quot;&gt;&NewLine;&Tab;&Tab;&lt;label for=&quot;single-line-textbox&quot;&gt;Text box label&lt;/label&gt;&NewLine;&Tab;&Tab;&lt;input type=&quot;text&quot; id=&quot;single-line-textbox&quot; placeholder=&quot;Placeholder text&quot; /&gt;&NewLine;&Tab;&lt;/div&gt;&NewLine;&NewLine;&Tab;&lt;div class=&quot;inline-field error-state&quot;&gt;&NewLine;&Tab;&Tab;&lt;label for=&quot;single-line-textbox-error&quot;&gt;Text box in error state&lt;/label&gt;&NewLine;&Tab;&Tab;&lt;input type=&quot;text&quot; id=&quot;single-line-textbox-error&quot; placeholder=&quot;Placeholder text&quot; /&gt;&NewLine;&Tab;&Tab;&lt;span class=&quot;error-msg&quot;&gt;Something&CloseCurlyQuote;s not right&lt;/span&gt;&NewLine;&Tab;&lt;/div&gt;&NewLine;&lt;/form&gt;</code></pre>
+<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;form action=&quot;#&quot; method=&quot;post&quot; class=&quot;inline-form&quot;&gt;
+	&lt;div class=&quot;form-field&quot;&gt;
+		&lt;label for=&quot;single-line-textbox&quot;&gt;Text box label&lt;/label&gt;
+		&lt;input type=&quot;text&quot; id=&quot;single-line-textbox&quot; placeholder=&quot;Placeholder text&quot; /&gt;
+	&lt;/div&gt;
 
-		<form action="#" method="post">
-			<div class="inline-field">
+	&lt;div class=&quot;form-field invalid-field&quot;&gt;
+		&lt;label for=&quot;single-line-textbox-error&quot;&gt;Text box in error state&lt;/label&gt;
+		&lt;div&gt;
+			&lt;input type=&quot;text&quot; id=&quot;single-line-textbox-error&quot; placeholder=&quot;Placeholder text&quot; /&gt;
+			&lt;span class=&quot;help-text&quot;&gt;Something&rsquo;s not right&lt;/span&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/form&gt;</code></pre>
+
+		<form action="#" method="post" class="inline-form">
+			<div class="form-field">
 				<label for="single-line-textbox">Text box label</label>
 				<input type="text" id="single-line-textbox" placeholder="Placeholder text" />
 			</div>
 
-			<div class="inline-field error-state">
+			<div class="form-field invalid-field">
 				<label for="single-line-textbox-error">Text box in error state</label>
-				<input type="text" id="single-line-textbox-error" placeholder="Placeholder text" />
-				<span class="error-msg">Something’s not right</span>
+				<div>
+					<input type="text" id="single-line-textbox-error" placeholder="Placeholder text" />
+					<span class="help-text">Something’s not right</span>
+				</div>
 			</div>
 		</form>
 	</section>
@@ -32,18 +47,33 @@
 			<span class="xpl-subheading"><a href data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></span>
 		</header>
 
-		<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;form action=&quot;#&quot; method=&quot;post&quot;&gt;&NewLine;&Tab;&lt;div class=&quot;form-field&quot;&gt;&NewLine;&Tab;&Tab;&lt;label for=&quot;multi-line-textbox&quot;&gt;Text box label&lt;/label&gt;&NewLine;&Tab;&Tab;&lt;textarea id=&quot;multi-line-textbox&quot; cols=&quot;50&quot; rows=&quot;5&quot; placeholder=&quot;Placeholder text&quot;&gt;&lt;/textarea&gt;&NewLine;&Tab;&lt;/div&gt;&NewLine;&NewLine;&Tab;&lt;div class=&quot;form-field error-state&quot;&gt;&NewLine;&Tab;&Tab;&lt;label for=&quot;multi-line-textbox-error&quot;&gt;Text box in error state&lt;/label&gt;&NewLine;&Tab;&Tab;&lt;textarea id=&quot;multi-line-textbox-error&quot; cols=&quot;50&quot; rows=&quot;5&quot; placeholder=&quot;Placeholder text&quot;&gt;&lt;/textarea&gt;&NewLine;&Tab;&Tab;&lt;span class=&quot;error-msg&quot;&gt;Something&CloseCurlyQuote;s not right&lt;/span&gt;&NewLine;&Tab;&lt;/div&gt;&NewLine;&lt;/form&gt;</code></pre>
+<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;form action=&quot;#&quot; method=&quot;post&quot; class=&quot;inline-form&quot;&gt;
+	&lt;div class=&quot;form-field&quot;&gt;
+		&lt;label for=&quot;multi-line-textbox&quot;&gt;Text box label&lt;/label&gt;
+		&lt;textarea id=&quot;multi-line-textbox&quot; cols=&quot;50&quot; rows=&quot;5&quot; placeholder=&quot;Placeholder text&quot;&gt;&lt;/textarea&gt;
+	&lt;/div&gt;
 
-		<form action="#" method="post">
+	&lt;div class=&quot;form-field invalid-field&quot;&gt;
+		&lt;label for=&quot;multi-line-textbox-error&quot;&gt;Text box in error state&lt;/label&gt;
+		&lt;div&gt;
+			&lt;textarea id=&quot;multi-line-textbox-error&quot; cols=&quot;50&quot; rows=&quot;5&quot; placeholder=&quot;Placeholder text&quot;&gt;&lt;/textarea&gt;
+			&lt;span class=&quot;help-text&quot;&gt;Something&rsquo;s not right&lt;/span&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/form&gt;</code></pre>
+
+		<form action="#" method="post" class="inline-form">
 			<div class="form-field">
 				<label for="multi-line-textbox">Text box label</label>
 				<textarea id="multi-line-textbox" cols="50" rows="5" placeholder="Placeholder text"></textarea>
 			</div>
 
-			<div class="form-field error-state">
+			<div class="form-field invalid-field">
 				<label for="multi-line-textbox-error">Text box in error state</label>
-				<textarea id="multi-line-textbox-error" cols="50" rows="5" placeholder="Placeholder text"></textarea>
-				<span class="error-msg">Something’s not right</span>
+				<div>
+					<textarea id="multi-line-textbox-error" cols="50" rows="5" placeholder="Placeholder text"></textarea>
+					<span class="help-text">Something’s not right</span>
+				</div>
 			</div>
 		</form>
 	</section>
@@ -56,11 +86,49 @@
 			<span class="xpl-subheading"><a href data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></span>
 		</header>
 
-		<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;form action=&quot;#&quot; method=&quot;post&quot;&gt;&NewLine;&Tab;&lt;div class=&quot;inline-field&quot;&gt;&NewLine;&Tab;&Tab;&lt;label for=&quot;dropdown&quot;&gt;Drop-down label&lt;/label&gt;&NewLine;&Tab;&Tab;&lt;select id=&quot;dropdown&quot;&gt;&NewLine;&Tab;&Tab;&Tab;&lt;option value=&quot;&quot;&gt;Option 1&lt;/option&gt;&NewLine;&Tab;&Tab;&Tab;&lt;option value=&quot;&quot;&gt;Option 2&lt;/option&gt;&NewLine;&Tab;&Tab;&Tab;&lt;option value=&quot;&quot;&gt;Option 3&lt;/option&gt;&NewLine;&Tab;&Tab;&lt;/select&gt;&NewLine;&Tab;&lt;/div&gt;&NewLine;&NewLine;&Tab;&lt;div class=&quot;inline-field error-state&quot;&gt;&NewLine;&Tab;&Tab;&lt;label for=&quot;dropdown-error&quot;&gt;Drop-down in error state&lt;/label&gt;&NewLine;&Tab;&Tab;&lt;select id=&quot;dropdown-error&quot;&gt;&NewLine;&Tab;&Tab;&Tab;&lt;option value=&quot;&quot;&gt;Option 1&lt;/option&gt;&NewLine;&Tab;&Tab;&Tab;&lt;option value=&quot;&quot;&gt;Option 2&lt;/option&gt;&NewLine;&Tab;&Tab;&Tab;&lt;option value=&quot;&quot;&gt;Option 3&lt;/option&gt;&NewLine;&Tab;&Tab;&lt;/select&gt;&NewLine;&Tab;&Tab;&lt;span class=&quot;error-msg&quot;&gt;Something&CloseCurlyQuote;s not right&lt;/span&gt;&NewLine;&Tab;&lt;/div&gt;&NewLine;&lt;/form&gt;</code></pre>
+<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;form action=&quot;#&quot; method=&quot;post&quot; class=&quot;inline-form&quot;&gt;
+&Tab;&lt;div class=&quot;form-field&quot;&gt;
+&Tab;&Tab;&lt;label for=&quot;dropdown&quot;&gt;Drop-down label&lt;/label&gt;
 
-		<form action="#" method="post">
-			<div class="inline-field">
+&Tab;&Tab;&lt;select id=&quot;dropdown&quot;&gt;
+&Tab;&Tab;&Tab;&lt;option value=&quot;&quot;&gt;Option 1&lt;/option&gt;
+&Tab;&Tab;&Tab;&lt;option value=&quot;&quot;&gt;Option 2&lt;/option&gt;
+&Tab;&Tab;&Tab;&lt;option value=&quot;&quot;&gt;Option 3&lt;/option&gt;
+&Tab;&Tab;&lt;/select&gt;
+&Tab;&lt;/div&gt;
+
+&Tab;&lt;div class=&quot;form-field invalid-field&quot;&gt;
+&Tab;&Tab;&lt;label for=&quot;dropdown-error&quot;&gt;Drop-down in error state&lt;/label&gt;
+
+&Tab;&Tab;&lt;div&gt;
+&Tab;&Tab;&Tab;&lt;select id=&quot;dropdown-error&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;option value=&quot;&quot;&gt;Option 1&lt;/option&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;option value=&quot;&quot;&gt;Option 2&lt;/option&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;option value=&quot;&quot;&gt;Option 3&lt;/option&gt;
+&Tab;&Tab;&Tab;&lt;/select&gt;
+&Tab;&Tab;&Tab;&lt;span class=&quot;help-text&quot;&gt;Something&CloseCurlyQuote;s not right&lt;/span&gt;
+&Tab;&Tab;&lt;/div&gt;
+&Tab;&lt;/div&gt;
+
+&Tab;&lt;div class=&quot;form-field&quot;&gt;
+&Tab;&Tab;&lt;label for=&quot;dropdown-attached&quot;&gt;Attached Drop-down&lt;/label&gt;
+
+&Tab;&Tab;&lt;span class=&quot;attached-field&quot;&gt;
+&Tab;&Tab;&Tab;&lt;input type=&quot;search&quot; placeholder=&quot;Search&quot;&gt;
+
+&Tab;&Tab;&Tab;&lt;select id=&quot;dropdown-attached&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;option value=&quot;&quot;&gt;Entire Site&lt;/option&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;option value=&quot;&quot;&gt;Forums&lt;/option&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;option value=&quot;&quot;&gt;Support Pages&lt;/option&gt;
+&Tab;&Tab;&Tab;&lt;/select&gt;
+&Tab;&Tab;&lt;/span&gt;
+&Tab;&lt;/div&gt;
+&lt;/form&gt;</code></pre>
+
+		<form action="#" method="post" class="inline-form">
+			<div class="form-field">
 				<label for="dropdown">Drop-down label</label>
+
 				<select id="dropdown">
 					<option value="">Option 1</option>
 					<option value="">Option 2</option>
@@ -68,17 +136,38 @@
 				</select>
 			</div>
 
-			<div class="inline-field error-state">
+			<div class="form-field invalid-field">
 				<label for="dropdown-error">Drop-down in error state</label>
-				<select id="dropdown-error">
-					<option value="">Option 1</option>
-					<option value="">Option 2</option>
-					<option value="">Option 3</option>
-				</select>
-				<span class="error-msg">Something’s not right</span>
+
+				<div>
+					<select id="dropdown-error">
+						<option value="">Option 1</option>
+						<option value="">Option 2</option>
+						<option value="">Option 3</option>
+					</select>
+					<span class="help-text">Something’s not right</span>
+				</div>
+			</div>
+
+			<div class="form-field">
+				<label for="dropdown-attached">Attached Drop-down</label>
+
+				<span class="attached-field">
+					<input type="search" placeholder="Search">
+
+					<select id="dropdown-attached">
+						<option value="">Entire Site</option>
+						<option value="">Forums</option>
+						<option value="">Support Pages</option>
+					</select>
+				</span>
 			</div>
 		</form>
 	</section>
+
+	<div class="message-box info-message">
+		<p>Fields can be <em>attached</em> to each other as in the demo above. Just wrap the fields in a <code>span</code> tag with a class of <code>attached-field</code>.</p>
+	</div>
 
 	<div class="xpl-selection-ui">
 		<section class="xpl-content-group" data-view-code data-show-text="View HTML" data-hide-text="Hide HTML">
@@ -87,9 +176,24 @@
 				<span class="xpl-subheading"><a href data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></span>
 			</header>
 
-			<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;form action=&quot;#&quot; method=&quot;post&quot;&gt;&NewLine;&Tab;&lt;div class=&quot;form-field option-field&quot;&gt;&NewLine;&Tab;&Tab;&lt;input type=&quot;checkbox&quot; id=&quot;check-1&quot; checked=&quot;checked&quot; /&gt;&NewLine;&Tab;&Tab;&lt;label for=&quot;check-1&quot;&gt;Option 1&lt;/label&gt;&NewLine;&Tab;&lt;/div&gt;&NewLine;&Tab;&lt;div class=&quot;form-field option-field&quot;&gt;&NewLine;&Tab;&Tab;&lt;input type=&quot;checkbox&quot; id=&quot;check-2&quot; /&gt;&NewLine;&Tab;&Tab;&lt;label for=&quot;check-2&quot;&gt;Option 2&lt;/label&gt;&NewLine;&Tab;&lt;/div&gt;&NewLine;&Tab;&lt;div class=&quot;form-field option-field&quot;&gt;&NewLine;&Tab;&Tab;&lt;input type=&quot;checkbox&quot; id=&quot;check-3&quot; /&gt;&NewLine;&Tab;&Tab;&lt;label for=&quot;check-3&quot;&gt;Option 3&lt;/label&gt;&NewLine;&Tab;&lt;/div&gt;&NewLine;&NewLine;&Tab;&lt;p class=&quot;error-msg&quot;&gt;General error message.&lt;/p&gt;&NewLine;&lt;/form&gt;</code></pre>
+<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;form action=&quot;#&quot; method=&quot;post&quot; class=&quot;basic-form&quot;&gt;
+	&lt;div class=&quot;form-field option-field&quot;&gt;
+		&lt;input type=&quot;checkbox&quot; id=&quot;check-1&quot; checked=&quot;checked&quot; /&gt;
+		&lt;label for=&quot;check-1&quot;&gt;Option 1&lt;/label&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;form-field option-field&quot;&gt;
+		&lt;input type=&quot;checkbox&quot; id=&quot;check-2&quot; /&gt;
+		&lt;label for=&quot;check-2&quot;&gt;Option 2&lt;/label&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;form-field option-field&quot;&gt;
+		&lt;input type=&quot;checkbox&quot; id=&quot;check-3&quot; /&gt;
+		&lt;label for=&quot;check-3&quot;&gt;Option 3&lt;/label&gt;
+	&lt;/div&gt;
 
-			<form action="#" method="post">
+	&lt;p class=&quot;help-text&quot;&gt;General error message.&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+
+			<form action="#" method="post" class="basic-form">
 				<div class="form-field option-field">
 					<input type="checkbox" id="check-1" checked="checked" />
 					<label for="check-1">Option 1</label>
@@ -103,7 +207,7 @@
 					<label for="check-3">Option 3</label>
 				</div>
 
-				<p class="error-msg">General error message.</p>
+				<p class="help-text">General error message.</p>
 			</form>
 		</section>
 
@@ -113,9 +217,24 @@
 				<span class="xpl-subheading"><a href data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></span>
 			</header>
 
-			<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;form action=&quot;#&quot; method=&quot;post&quot;&gt;&NewLine;&Tab;&lt;div class=&quot;form-field option-field&quot;&gt;&NewLine;&Tab;&Tab;&lt;input type=&quot;radio&quot; id=&quot;radio-1&quot; name=&quot;radio&quot; checked=&quot;checked&quot; /&gt;&NewLine;&Tab;&Tab;&lt;label for=&quot;radio-1&quot;&gt;Option 1&lt;/label&gt;&NewLine;&Tab;&lt;/div&gt;&NewLine;&Tab;&lt;div class=&quot;form-field option-field&quot;&gt;&NewLine;&Tab;&Tab;&lt;input type=&quot;radio&quot; id=&quot;radio-2&quot; name=&quot;radio&quot; /&gt;&NewLine;&Tab;&Tab;&lt;label for=&quot;radio-2&quot;&gt;Option 2&lt;/label&gt;&NewLine;&Tab;&lt;/div&gt;&NewLine;&Tab;&lt;div class=&quot;form-field option-field&quot;&gt;&NewLine;&Tab;&Tab;&lt;input type=&quot;radio&quot; id=&quot;radio-3&quot; name=&quot;radio&quot; /&gt;&NewLine;&Tab;&Tab;&lt;label for=&quot;radio-3&quot;&gt;Option 3&lt;/label&gt;&NewLine;&Tab;&lt;/div&gt;&NewLine;&NewLine;&Tab;&lt;p class=&quot;error-msg&quot;&gt;General error message.&lt;/p&gt;&NewLine;&lt;/form&gt;</code></pre>
+<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;form action=&quot;#&quot; method=&quot;post&quot; class=&quot;basic-form&quot;&gt;
+	&lt;div class=&quot;form-field option-field&quot;&gt;
+		&lt;input type=&quot;radio&quot; id=&quot;radio-1&quot; name=&quot;radio&quot; checked=&quot;checked&quot; /&gt;
+		&lt;label for=&quot;radio-1&quot;&gt;Option 1&lt;/label&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;form-field option-field&quot;&gt;
+		&lt;input type=&quot;radio&quot; id=&quot;radio-2&quot; name=&quot;radio&quot; /&gt;
+		&lt;label for=&quot;radio-2&quot;&gt;Option 2&lt;/label&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;form-field option-field&quot;&gt;
+		&lt;input type=&quot;radio&quot; id=&quot;radio-3&quot; name=&quot;radio&quot; /&gt;
+		&lt;label for=&quot;radio-3&quot;&gt;Option 3&lt;/label&gt;
+	&lt;/div&gt;
 
-			<form action="#" method="post">
+	&lt;p class=&quot;help-text&quot;&gt;General error message.&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+
+			<form action="#" method="post" class="basic-form">
 				<div class="form-field option-field">
 					<input type="radio" id="radio-1" name="radio" checked="checked" />
 					<label for="radio-1">Option 1</label>
@@ -129,7 +248,7 @@
 					<label for="radio-3">Option 3</label>
 				</div>
 
-				<p class="error-msg">General error message.</p>
+				<p class="help-text">General error message.</p>
 			</form>
 		</section>
 	</div>
@@ -142,11 +261,20 @@
 			<span class="xpl-subheading"><a href data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></span>
 		</header>
 
-		<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;form action=&quot;#&quot; method=&quot;post&quot;&gt;&NewLine;&Tab;&lt;div class=&quot;form-field&quot;&gt;&NewLine;&Tab;&Tab;&lt;button&gt;Default Button&lt;/button&gt;&NewLine;&Tab;&Tab;&lt;button disabled=&quot;disabled&quot;&gt;Disabled Button&lt;/button&gt;&NewLine;&Tab;&lt;/div&gt;&NewLine;&lt;/form&gt;</code></pre>
+<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;form action=&quot;#&quot; method=&quot;post&quot; class=&quot;basic-form&quot;&gt;
+	&lt;div class=&quot;form-field&quot;&gt;
+		&lt;button class=&quot;primary&quot;&gt;Primary Button&lt;/button&gt;
+		&lt;button&gt;Default Button&lt;/button&gt;
+		&lt;input type=&quot;submit&quot; value=&quot;Submit Button&quot;/&gt;
+		&lt;button disabled=&quot;disabled&quot;&gt;Disabled Button&lt;/button&gt;
+	&lt;/div&gt;
+&lt;/form&gt;</code></pre>
 
-		<form action="#" method="post">
+		<form action="#" method="post" class="basic-form">
 			<div class="form-field">
+				<button class="primary">Primary Button</button>
 				<button>Default Button</button>
+				<input type="submit" value="Submit Button"/>
 				<button disabled="disabled">Disabled Button</button>
 			</div>
 		</form>
@@ -158,12 +286,32 @@
 			<span class="xpl-subheading"><a href data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></span>
 		</header>
 
-		<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;a href=&quot;#&quot; class=&quot;button&quot;&gt;Default Button&lt;/a&gt;&NewLine;&lt;a href=&quot;#&quot; class=&quot;button disabled&quot;&gt;Disabled Button&lt;/a&gt;</code></pre>
+<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;a href=&quot;#&quot; class=&quot;button primary&quot;&gt;Primary Button&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;button&quot;&gt;Default Button&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;button disabled&quot;&gt;Disabled Button&lt;/a&gt;</code></pre>
 
 		<div>
+			<a href="#" class="button primary">Primary Button</a>
 			<a href="#" class="button">Default Button</a>
 			<a href="#" class="button disabled">Disabled Button</a>
 		</div>
+	</section>
+
+	<section class="xpl-content-group" data-view-code data-show-text="View HTML" data-hide-text="Hide HTML">
+		<header>
+			<h1>Attached Buttons</h1>
+			<span class="xpl-subheading"><a href data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></span>
+		</header>
+
+<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;span class=&quot;attached-field&quot;&gt;
+&Tab;&lt;input type=&quot;search&quot; placeholder=&quot;Search&quot;&gt;
+&Tab;&lt;a href=&quot;#&quot; class=&quot;button&quot;&gt;Go&lt;/a&gt;
+&lt;/span&gt;</code></pre>
+
+		<span class="attached-field">
+			<input type="search" placeholder="Search">
+			<a href="#" class="button">Go</a>
+		</span>
 	</section>
 
 	<h2>Messages</h2>
@@ -174,9 +322,9 @@
 			<span class="xpl-subheading"><a href data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></span>
 		</header>
 
-		<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;div class=&quot;msg-box success-msg&quot;&gt;Things worked out as expected. Congratulations!&lt;/div&gt;</code></pre>
+<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;div class=&quot;message-box success-message&quot;&gt;Things worked out as expected. Congratulations!&lt;/div&gt;</code></pre>
 
-		<div class="msg-box success-msg">Things worked out as expected. Congratulations!</div>
+		<div class="message-box success-message">Things worked out as expected. Congratulations!</div>
 	</section>
 
 	<section class="xpl-content-group" data-view-code data-show-text="View HTML" data-hide-text="Hide HTML">
@@ -185,9 +333,9 @@
 			<span class="xpl-subheading"><a href data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></span>
 		</header>
 
-		<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;div class=&quot;msg-box warning-msg&quot;&gt;Be on the look-out. I&amp;rsquo;m not sure if everything is all right.&lt;/div&gt;</code></pre>
+<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;div class=&quot;message-box warning-message&quot;&gt;Be on the look-out. I&amp;rsquo;m not sure if everything is all right.&lt;/div&gt;</code></pre>
 
-		<div class="msg-box warning-msg">Be on the look-out. I&rsquo;m not sure if everything is all right.</div>
+		<div class="message-box warning-message">Be on the look-out. I&rsquo;m not sure if everything is all right.</div>
 	</section>
 
 	<section class="xpl-content-group" data-view-code data-show-text="View HTML" data-hide-text="Hide HTML">
@@ -196,8 +344,409 @@
 			<span class="xpl-subheading"><a href data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></span>
 		</header>
 
-		<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;div class=&quot;msg-box error-msg&quot;&gt;Something went wrong. Maybe try it again?&lt;/div&gt;</code></pre>
+<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;div class=&quot;message-box error-message&quot;&gt;Something went wrong. Maybe try it again?&lt;/div&gt;</code></pre>
 
-		<div class="msg-box error-msg">Something went wrong. Maybe try it again?</div>
+		<div class="message-box error-message">Something went wrong. Maybe try it again?</div>
 	</section>
+
+	<section class="xpl-content-group" data-view-code data-show-text="View HTML" data-hide-text="Hide HTML">
+		<header>
+			<h1>Info Message</h1>
+			<span class="xpl-subheading"><a href data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></span>
+		</header>
+
+<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;div class=&quot;message-box info-message&quot;&gt;Just an informative message. Nothing more.&lt;/div&gt;</code></pre>
+
+		<div class="message-box info-message">Just an informative message. Nothing more.</div>
+	</section>
+
+	<h2>Form Layouts</h2>
+
+	<p>There are two types of form layouts: Basic and Inline. On small viewports, both types render the same &mdash; vertically, with labels above the fields.</p>
+
+	<h3>Basic Forms</h3>
+
+	<p>For larger viewports, Basic forms do not change, unless you make use of the <code>inline-label</code> class on individual fields within the Basic form (the drop-down fields in the following demo serve as an example).</p>
+
+	<section class="xpl-content-group" data-view-code data-show-text="View HTML" data-hide-text="Hide HTML">
+		<header>
+			<h1>Basic Form</h1>
+			<span class="xpl-subheading"><a href data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></span>
+		</header>
+
+<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;form action=&quot;#&quot; method=&quot;post&quot;&gt;
+&Tab;&lt;fieldset&gt;
+&Tab;&Tab;&lt;legend&gt;Basic Form&lt;/legend&gt;
+
+&Tab;&Tab;&lt;div class=&quot;basic-form&quot;&gt;
+&Tab;&Tab;&Tab;&lt;div class=&quot;form-field&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;label for=&quot;basicTextBox&quot;&gt;Text Box Label&lt;/label&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;input type=&quot;text&quot; id=&quot;basicTextBox&quot; placeholder=&quot;Placeholder&quot; aria-describedby=&quot;basicHelpText&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;p id=&quot;basicHelpText&quot; class=&quot;help-text&quot;&gt;This is additional text to help describe the expected input.&lt;/p&gt;
+&Tab;&Tab;&Tab;&lt;/div&gt;
+
+&Tab;&Tab;&Tab;&lt;div class=&quot;form-field&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;label for=&quot;basicDisabledTextBox&quot;&gt;Disabled Text Box&lt;/label&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;input type=&quot;text&quot; id=&quot;basicDisabledTextBox&quot; disabled=&quot;&quot; value=&quot;This text box is disabled&quot;&gt;
+&Tab;&Tab;&Tab;&lt;/div&gt;
+
+&Tab;&Tab;&Tab;&lt;div class=&quot;form-field&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;label for=&quot;basicTextarea&quot;&gt;Textarea Label&lt;/label&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;textarea name=&quot;&quot; id=&quot;basicTextarea&quot; cols=&quot;50&quot; rows=&quot;5&quot; placeholder=&quot;Placeholder text&amp;hellip;&quot;&gt;&lt;/textarea&gt;
+&Tab;&Tab;&Tab;&lt;/div&gt;
+
+&Tab;&Tab;&Tab;&lt;div class=&quot;form-field inline-label&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;label for=&quot;basicSelect&quot;&gt;Inline Drop-down Label&lt;/label&gt;
+
+&Tab;&Tab;&Tab;&Tab;&lt;select id=&quot;basicSelect&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;option value=&quot;&quot;&gt;Select an option&lt;/option&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;option value=&quot;&quot;&gt;Option 1&lt;/option&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;option value=&quot;&quot;&gt;Option 2&lt;/option&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;option value=&quot;&quot;&gt;Option 3&lt;/option&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;option value=&quot;&quot;&gt;Option 4&lt;/option&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;/select&gt;
+&Tab;&Tab;&Tab;&lt;/div&gt;
+
+&Tab;&Tab;&Tab;&lt;div class=&quot;form-field inline-label&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;label for=&quot;basicDisabledSelect&quot;&gt;Disabled Drop-down Label&lt;/label&gt;
+
+&Tab;&Tab;&Tab;&Tab;&lt;select id=&quot;basicDisabledSelect&quot; disabled&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;option value=&quot;&quot;&gt;Select an option&lt;/option&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;option value=&quot;&quot;&gt;Option 1&lt;/option&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;option value=&quot;&quot;&gt;Option 2&lt;/option&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;option value=&quot;&quot;&gt;Option 3&lt;/option&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;option value=&quot;&quot;&gt;Option 4&lt;/option&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;/select&gt;
+&Tab;&Tab;&Tab;&lt;/div&gt;
+
+&Tab;&Tab;&Tab;&lt;div class=&quot;form-field&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;p class=&quot;field-description&quot;&gt;Description for radio buttons.&lt;/p&gt;
+
+&Tab;&Tab;&Tab;&Tab;&lt;div&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;input type=&quot;radio&quot; name=&quot;basicRadio&quot; id=&quot;basicRadio1&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;label for=&quot;basicRadio1&quot;&gt;Label 1&lt;/label&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;/div&gt;
+
+&Tab;&Tab;&Tab;&Tab;&lt;div&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;input type=&quot;radio&quot; name=&quot;basicRadio&quot; id=&quot;basicRadio2&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;label for=&quot;basicRadio2&quot;&gt;Label 2&lt;/label&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;/div&gt;
+
+&Tab;&Tab;&Tab;&Tab;&lt;div&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;input type=&quot;radio&quot; name=&quot;basicRadio&quot; id=&quot;basicRadio3&quot; disabled&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;label for=&quot;basicRadio3&quot;&gt;Disabled radio button&lt;/label&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;/div&gt;
+&Tab;&Tab;&Tab;&lt;/div&gt;
+
+&Tab;&Tab;&Tab;&lt;div class=&quot;form-field&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;p class=&quot;field-description&quot;&gt;Description for check boxes.&lt;/p&gt;
+
+&Tab;&Tab;&Tab;&Tab;&lt;div&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;input type=&quot;checkbox&quot; id=&quot;basicCheckbox1&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;label for=&quot;basicCheckbox1&quot;&gt;Label 1&lt;/label&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;/div&gt;
+
+&Tab;&Tab;&Tab;&Tab;&lt;div&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;input type=&quot;checkbox&quot; id=&quot;basicCheckbox2&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;label for=&quot;basicCheckbox2&quot;&gt;Label 2&lt;/label&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;/div&gt;
+
+&Tab;&Tab;&Tab;&Tab;&lt;div&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;input type=&quot;checkbox&quot; id=&quot;basicCheckbox3&quot; disabled&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;label for=&quot;basicCheckbox3&quot;&gt;Disabled check box&lt;/label&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;/div&gt;
+&Tab;&Tab;&Tab;&lt;/div&gt;
+&Tab;&Tab;&lt;/div&gt;
+&Tab;&lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+
+		<form action="#" method="post">
+			<fieldset>
+				<legend>Basic Form</legend>
+
+				<div class="basic-form">
+					<div class="form-field">
+						<label for="basicTextBox">Text Box Label</label>
+						<input type="text" id="basicTextBox" placeholder="Placeholder" aria-describedby="basicHelpText">
+						<p id="basicHelpText" class="help-text">This is additional text to help describe the expected input.</p>
+					</div>
+
+					<div class="form-field">
+						<label for="basicDisabledTextBox">Disabled Text Box</label>
+						<input type="text" id="basicDisabledTextBox" disabled="" value="This text box is disabled">
+					</div>
+
+					<div class="form-field">
+						<label for="basicTextarea">Textarea Label</label>
+						<textarea name="" id="basicTextarea" cols="50" rows="5" placeholder="Placeholder text&hellip;"></textarea>
+					</div>
+
+					<div class="form-field inline-label">
+						<label for="basicSelect">Inline Drop-down Label</label>
+
+						<select id="basicSelect">
+							<option value="">Select an option</option>
+							<option value="">Option 1</option>
+							<option value="">Option 2</option>
+							<option value="">Option 3</option>
+							<option value="">Option 4</option>
+						</select>
+					</div>
+
+					<div class="form-field inline-label">
+						<label for="basicDisabledSelect">Disabled Drop-down Label</label>
+
+						<select id="basicDisabledSelect" disabled>
+							<option value="">Select an option</option>
+							<option value="">Option 1</option>
+							<option value="">Option 2</option>
+							<option value="">Option 3</option>
+							<option value="">Option 4</option>
+						</select>
+					</div>
+
+					<div class="form-field">
+						<p class="field-description">Description for radio buttons.</p>
+
+						<div>
+							<input type="radio" name="basicRadio" id="basicRadio1">
+							<label for="basicRadio1">Label 1</label>
+						</div>
+
+						<div>
+							<input type="radio" name="basicRadio" id="basicRadio2">
+							<label for="basicRadio2">Label 2</label>
+						</div>
+
+						<div>
+							<input type="radio" name="basicRadio" id="basicRadio3" disabled>
+							<label for="basicRadio3">Disabled radio button</label>
+						</div>
+					</div>
+
+					<div class="form-field">
+						<p class="field-description">Description for check boxes.</p>
+
+						<div>
+							<input type="checkbox" id="basicCheckbox1">
+							<label for="basicCheckbox1">Label 1</label>
+						</div>
+
+						<div>
+							<input type="checkbox" id="basicCheckbox2">
+							<label for="basicCheckbox2">Label 2</label>
+						</div>
+
+						<div>
+							<input type="checkbox" id="basicCheckbox3" disabled>
+							<label for="basicCheckbox3">Disabled check box</label>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	</section>
+
+	<div class="message-box info-message">
+		<p>Use the <strong>help-text</strong> class to style helpful information below a form field.</p>
+	</div>
+
+	<h3>Inline Forms</h3>
+
+	<p>Inline forms allow labels to be aligned horizontally with their respective fields or for multiple fields to be aligned horizontally.</p>
+
+	<p>Use the <code>inline-form</code> class on a wrapper element and the <code>form-field</code> class on its direct children.</p>
+
+	<section class="xpl-content-group" data-view-code data-show-text="View HTML" data-hide-text="Hide HTML">
+		<header>
+			<h1>Inline Form</h1>
+			<span class="xpl-subheading"><a href data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></span>
+		</header>
+
+<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;form action=&quot;#&quot; method=&quot;post&quot;&gt;
+&Tab;&lt;fieldset&gt;
+&Tab;&Tab;&lt;legend&gt;Inline Form (Inline Labels)&lt;/legend&gt;
+
+&Tab;&Tab;&lt;div class=&quot;inline-form&quot;&gt;
+&Tab;&Tab;&Tab;&lt;div class=&quot;form-field&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;label for=&quot;inlineTextBox&quot;&gt;Text Box Label&lt;/label&gt;
+
+&Tab;&Tab;&Tab;&Tab;&lt;div&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;input type=&quot;text&quot; id=&quot;inlineTextBox&quot; placeholder=&quot;Placeholder&quot; aria-describedby=&quot;inlineHelpText&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;p id=&quot;inlineHelpText&quot; class=&quot;help-text&quot;&gt;This is additional text to help describe the expected input.&lt;/p&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;/div&gt;
+&Tab;&Tab;&Tab;&lt;/div&gt;
+
+&Tab;&Tab;&Tab;&lt;div class=&quot;form-field&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;label for=&quot;inlineTextarea&quot;&gt;Textarea Label&lt;/label&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;textarea name=&quot;&quot; id=&quot;inlineTextarea&quot; cols=&quot;50&quot; rows=&quot;5&quot; placeholder=&quot;Placeholder text&amp;hellip;&quot;&gt;&lt;/textarea&gt;
+&Tab;&Tab;&Tab;&lt;/div&gt;
+
+&Tab;&Tab;&Tab;&lt;div class=&quot;form-field&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;label for=&quot;inlineSelect&quot;&gt;Drop-down Label&lt;/label&gt;
+
+&Tab;&Tab;&Tab;&Tab;&lt;select id=&quot;inlineSelect&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;option value=&quot;&quot;&gt;Select an option&lt;/option&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;option value=&quot;&quot;&gt;Option 1&lt;/option&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;option value=&quot;&quot;&gt;Option 2&lt;/option&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;option value=&quot;&quot;&gt;Option 3&lt;/option&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;/select&gt;
+&Tab;&Tab;&Tab;&lt;/div&gt;
+&Tab;&Tab;&lt;/div&gt;
+&Tab;&lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+
+		<form action="#" method="post">
+			<fieldset>
+				<legend>Inline Form (Inline Labels)</legend>
+
+				<div class="inline-form">
+					<div class="form-field">
+						<label for="inlineTextBox">Text Box Label</label>
+
+						<div>
+							<input type="text" id="inlineTextBox" placeholder="Placeholder" aria-describedby="inlineHelpText">
+							<p id="inlineHelpText" class="help-text">This is additional text to help describe the expected input.</p>
+						</div>
+					</div>
+
+					<div class="form-field">
+						<label for="inlineTextarea">Textarea Label</label>
+						<textarea name="" id="inlineTextarea" cols="50" rows="5" placeholder="Placeholder text&hellip;"></textarea>
+					</div>
+
+					<div class="form-field">
+						<label for="inlineSelect">Drop-down Label</label>
+
+						<select id="inlineSelect">
+							<option value="">Select an option</option>
+							<option value="">Option 1</option>
+							<option value="">Option 2</option>
+							<option value="">Option 3</option>
+						</select>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	</section>
+
+	<p>The <code>multiple-fields</code> class can be used along with the <code>form-field</code> class if multiple fields should appear side-by-side.</p>
+
+	<section class="xpl-content-group" data-view-code data-show-text="View HTML" data-hide-text="Hide HTML">
+		<header>
+			<h1>Inline Form</h1>
+			<span class="xpl-subheading"><a href data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></span>
+		</header>
+
+<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;form action=&quot;#&quot; method=&quot;post&quot;&gt;
+&Tab;&lt;fieldset&gt;
+&Tab;&Tab;&lt;legend&gt;Inline Form (Multiple Inline Fields)&lt;/legend&gt;
+
+&Tab;&Tab;&lt;div class=&quot;inline-form&quot;&gt;
+&Tab;&Tab;&Tab;&lt;div class=&quot;form-field multiple-fields&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;div&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;label for=&quot;salutation&quot;&gt;Salutation&lt;/label&gt;
+
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;select id=&quot;salutation&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;option value=&quot;&quot;&gt;Mr.&lt;/option&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;option value=&quot;&quot;&gt;Mrs.&lt;/option&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;option value=&quot;&quot;&gt;Ms.&lt;/option&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;/select&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;/div&gt;
+
+&Tab;&Tab;&Tab;&Tab;&lt;div&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;label for=&quot;firstName&quot;&gt;First Name&lt;/label&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;input type=&quot;text&quot; id=&quot;firstName&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;/div&gt;
+
+&Tab;&Tab;&Tab;&Tab;&lt;div&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;label for=&quot;lastName&quot;&gt;Last Name&lt;/label&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;input type=&quot;text&quot; id=&quot;lastName&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;/div&gt;
+&Tab;&Tab;&Tab;&lt;/div&gt;
+&Tab;&Tab;&lt;/div&gt;
+&Tab;&lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+
+		<form action="#" method="post">
+			<fieldset>
+				<legend>Inline Form (Multiple Inline Fields)</legend>
+
+				<div class="inline-form">
+					<div class="form-field multiple-fields">
+						<div>
+							<label for="salutation">Salutation</label>
+
+							<select id="salutation">
+								<option value="">Mr.</option>
+								<option value="">Mrs.</option>
+								<option value="">Ms.</option>
+							</select>
+						</div>
+
+						<div>
+							<label for="firstName">First Name</label>
+							<input type="text" id="firstName">
+						</div>
+
+						<div>
+							<label for="lastName">Last Name</label>
+							<input type="text" id="lastName">
+						</div>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	</section>
+
+	<p>When multiple fields are used, labels are not displayed inline anymore. However, like Basic forms, the <code>inline-label</code> class can be used to force a label inline, as seen in the e-mail address field below.</p>
+
+	<section class="xpl-content-group" data-view-code data-show-text="View HTML" data-hide-text="Hide HTML">
+		<header>
+			<h1>Inline Form</h1>
+			<span class="xpl-subheading"><a href data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></span>
+		</header>
+
+<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;form action=&quot;#&quot; method=&quot;post&quot;&gt;
+&Tab;&lt;fieldset&gt;
+&Tab;&Tab;&lt;legend&gt;Inline Form (Multiple Inline Fields and Inline Labels)&lt;/legend&gt;
+
+&Tab;&Tab;&lt;div class=&quot;inline-form&quot;&gt;
+&Tab;&Tab;&Tab;&lt;div class=&quot;form-field multiple-fields&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;div class=&quot;inline-label&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;label for=&quot;email&quot;&gt;E-mail Address&lt;/label&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;input type=&quot;email&quot; id=&quot;email&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;/div&gt;
+
+&Tab;&Tab;&Tab;&Tab;&lt;div class=&quot;inline-label&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;input type=&quot;checkbox&quot; id=&quot;signup&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;label for=&quot;signup&quot;&gt;Sign me up for the newsletter&lt;/label&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;/div&gt;
+&Tab;&Tab;&Tab;&lt;/div&gt;
+&Tab;&Tab;&lt;/div&gt;
+&Tab;&lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+
+		<form action="#" method="post">
+			<fieldset>
+				<legend>Inline Form (Multiple Inline Fields and Inline Labels)</legend>
+
+				<div class="inline-form">
+					<div class="form-field multiple-fields">
+						<div class="inline-label">
+							<label for="email">E-mail Address</label>
+							<input type="email" id="email">
+						</div>
+
+						<div class="inline-label">
+							<input type="checkbox" id="signup">
+							<label for="signup">Sign me up for the newsletter</label>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	</section>
+
+	<p class="message-box info-message">If more advanced form alignment is required, make use of the framework grid in combination with Basic and Inline forms.</p>
 </div>

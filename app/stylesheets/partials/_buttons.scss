@@ -1,0 +1,61 @@
+// Button styles.
+//
+// No styleguide reference.
+
+$button-height: 2.5rem;
+
+button,
+.button,
+[type=button],
+[type=submit] {
+	@include box-sizing(border-box);
+	@include inline-block;
+	@include transition(.15s all ease-out);
+	@include box-shadow(0 0 0 rgba($color-text, .25));
+	padding: 0 1em;
+	height: $button-height;
+	border: 0;
+	vertical-align: middle;
+	text-decoration: none;
+	line-height: $button-height;
+	color: $color-bg;
+	background: $color-secondary;
+
+	&.primary {
+		background-color: $color-primary;
+	}
+
+	&:hover {
+		@include scale(1.1);
+		@include box-shadow(0 ($button-height / 5) ($button-height / 5) ($button-height / -10) rgba($color-text, .25));
+		text-decoration: none;
+	}
+
+	&:focus {
+		outline: 2px solid darken($color-secondary, 25%);
+	}
+
+	&.disabled,
+	&[disabled] {
+		@include text-shadow(1px 1px $color-bg);
+		color: $color-text;
+		background: darken($color-bg, 15%);
+		cursor: not-allowed;
+
+		&:hover,
+		&:focus {
+			@include scale(1);
+			@include box-shadow(none);
+			outline: 0;
+		}
+	}
+}
+
+.attached-field {
+	button,
+	.button,
+	[type=button],
+	[type=submit] {
+		display: table-cell;
+	}
+}
