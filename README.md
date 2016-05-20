@@ -6,7 +6,7 @@ The Experis Pattern Library (XPL) is a living style guide and a component-driven
 
 ## Requirements
 * [Node.js](http://nodejs.org/): Download and run the installer.
-* [Compass](http://compass-style.org/) (requires [Ruby](https://www.ruby-lang.org/en/downloads/)): Enter `gem install compass` from a command prompt.
+* [Compass](http://compass-style.org/) (requires [Ruby](https://www.ruby-lang.org/en/downloads/) 2.2.x): Enter `gem install compass` from a command prompt.
 * [Grunt](http://gruntjs.com/): Enter `npm install -g grunt-cli`.
 * [Bower](http://bower.io/): Enter `npm install -g bower`.
 
