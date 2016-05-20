@@ -3,6 +3,9 @@
 // Modules
 @import 'modules/all';         // Modules contain functions and mixins
 
+// User Styles
+@import 'main';
+
 // Variables
 @import 'pattern-lib/base';
 
@@ -11,9 +14,6 @@
 @import 'pattern-lib/global';  // Globally available classes
 @import 'pattern-lib/nav';     // Navigation and menu styles
 @import 'pattern-lib/footer';  // Footer styles
-
-// User Styles
-@import 'main';
 
 // Third-party CSS
 @import 'vendor/prettyprint';  // Sunburst theme for Google Pretty Print
